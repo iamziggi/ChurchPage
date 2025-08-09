@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCC Ibara Cathedral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: "#353535",
+              teal: "#3c6e71",
+              light: "#ffffff",
+              muted: "#d9d9d9",
+              navy: "#284b63",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+            animation: {
+              fadeInUp: "fadeInUp 0.8s ease-out forwards",
+              float: "float 4s ease-in-out infinite",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      strong {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-muted text-dark">
+    <!-- Header -->
+    <header class="bg-navy text-white px-4 py-3">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between flex-wrap lg:flex-nowrap"
+      >
+        <!-- Left: Logo & Title -->
+        <div class="flex items-center gap-4">
+          <img
+            src="images/ccc-logo.jpg"
+            alt="CCC Logo"
+            class="w-16 h-16 rounded-full object-cover"
+          />
+          <h1 class="text-xl font-bold text-light">CCC Ibara Cathedral</h1>
+        </div>
+
+        <!-- Right: Nav Links (hidden on small screen) -->
+        <ul
+          id="nav-links"
+          class="hidden lg:flex items-center gap-6 font-bold text-white"
+        >
+          <li><a href="#home" class="hover:text-teal">Home</a></li>
+          <li><a href="#about" class="hover:text-teal">About Us</a></li>
+          <li>
+            <a href="#worship-services" class="hover:text-teal"
+              >Worship Services</a
+            >
+          </li>
+          <li>
+            <a href="#media-gallery" class="hover:text-teal">Media Gallery</a>
+          </li>
+          <li><a href="#donations" class="hover:text-teal">Donations</a></li>
+          <li><a href="#contact" class="hover:text-teal">Contact Us</a></li>
+        </ul>
+
+        <!-- Hamburger menu for small screen -->
+        <button class="text-white text-2xl lg:hidden mt-4" id="menu-toggle">
+          &#9776;
+        </button>
+      </div>
+
+      <!-- Mobile nav (underneath on small screens) -->
+      <ul
+        id="mobile-nav"
+        class="hidden flex-col gap-4 font-bold text-white mt-4 lg:hidden"
+      >
+        <li><a href="#home" class="hover:text-teal">Home</a></li>
+        <li><a href="#about" class="hover:text-teal">About Us</a></li>
+        <li>
+          <a href="#worship-services" class="hover:text-teal"
+            >Worship Services</a
+          >
+        </li>
+        <li>
+          <a href="#media-gallery" class="hover:text-teal">Media Gallery</a>
+        </li>
+        <li><a href="#donations" class="hover:text-teal">Donations</a></li>
+        <li><a href="#contact" class="hover:text-teal">Contact Us</a></li>
+      </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative w-full h-[90vh] overflow-hidden">
+      <!-- Image Slides -->
+      <div class="absolute inset-0 z-0">
+        <div class="hero-slider w-full h-full">
+          <div
+            class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-100"
+          >
+            <img
+              src="images/hero1.jpg"
+              alt="Hero Image 1"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0"
+          >
+            <img
+              src="images/hero2.jpg"
+              alt="Hero Image 2"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0"
+          >
+            <img
+              src="images/hero3.jpg"
+              alt="Hero Image 3"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay Text -->
+      <div
+        class="relative z-10 flex flex-col items-center justify-center text-center text-white h-full px-4 bg-gradient-to-b from-black/70 via-black/50 to-black/70 backdrop-blur-sm"
+      >
+        <h2
+          class="text-4xl md:text-5xl font-bold text-light mb-4 animate-fadeInUp drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] animate-float"
+        >
+          Welcome to Celestial Church of Christ, Ibara Cathedral
+        </h2>
+        <p
+          class="mt-4 text-lg md:text-xl animate-fadeInUp [animation-delay:200ms] drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)] animate-float"
+        >
+          "Where we worship in spirit and in truth" – John 4:24
+        </p>
+        <div
+          class="mt-8 space-x-4 animate-fadeInUp [animation-delay:400ms] animate-float"
+        >
+          <a
+            href="#worship-services"
+            class="inline-block bg-teal text-white px-6 py-3 rounded font-bold hover:bg-navy transition duration-300"
+          >
+            Join Our Service
+          </a>
+          <a
+            href="#about"
+            class="inline-block border-2 border-white text-white px-6 py-3 rounded font-bold hover:bg-white hover:text-navy transition duration-300"
+          >
+            Learn About Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- hero script -->
+    <script>
+      const heroSlides = document.querySelectorAll(".hero-slide");
+      let heroCurrent = 0;
+
+      function showHeroSlide(index) {
+        heroSlides.forEach((slide, i) => {
+          slide.classList.remove("opacity-100");
+          slide.classList.add("opacity-0");
+        });
+        heroSlides[index].classList.remove("opacity-0");
+        heroSlides[index].classList.add("opacity-100");
+      }
+
+      function nextHeroSlide() {
+        heroCurrent = (heroCurrent + 1) % heroSlides.length;
+        showHeroSlide(heroCurrent);
+      }
+
+      setInterval(nextHeroSlide, 5000);
+    </script>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-muted reveal">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-navy mb-8 text-center">
+          About Our Church
+        </h2>
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="md:w-1/2">
+            <img
+              src="/images/pastor.jpg"
+              alt="Our Shepherd"
+              class="rounded-lg shadow-lg w-full h-auto"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-bold text-teal mb-4">Our History</h3>
+            <p class="mb-4">
+              Founded in 1985, Celestial Church of Christ Ibara Cathedral has
+              been a beacon of light in Abeokuta, spreading the gospel through
+              worship, prayer, and community service.
+            </p>
+            <h3 class="text-2xl font-bold text-teal mb-4">Our Beliefs</h3>
+            <ul class="space-y-2 mb-4">
+              <li class="flex items-start">
+                <span class="text-teal mr-2">✓</span> The Holy Trinity: Father,
+                Son, and Holy Spirit
+              </li>
+              <li class="flex items-start">
+                <span class="text-teal mr-2">✓</span> The power of prayer and
+                fasting
+              </li>
+              <li class="flex items-start">
+                <span class="text-teal mr-2">✓</span> The second coming of
+                Christ
+              </li>
+            </ul>
+            <a
+              href="#"
+              class="inline-block bg-teal text-white px-5 py-2 rounded font-bold hover:bg-navy transition duration-300"
+            >
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Worship Services -->
+    <section id="worship-services" class="py-16 px-4 bg-white reveal">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-navy mb-8 text-center">
+          Worship With Us
+        </h2>
+        <div class="grid gap-8 md:grid-cols-3">
+          <div class="bg-muted p-6 rounded-lg shadow-md border-t-4 border-teal">
+            <h3 class="text-xl font-bold text-teal mb-3">Sunday Service</h3>
+            <p class="text-gray-600 mb-2">10:00 AM - 12:00 PM</p>
+            <p>Main worship service with Holy Communion on first Sundays</p>
+          </div>
+          <div class="bg-muted p-6 rounded-lg shadow-md border-t-4 border-teal">
+            <h3 class="text-xl font-bold text-teal mb-3">Midweek Service</h3>
+            <p class="text-gray-600 mb-2">Wednesday, 6:00 PM - 8:00 PM</p>
+            <p>Bible study and prayer meeting</p>
+          </div>
+          <div class="bg-muted p-6 rounded-lg shadow-md border-t-4 border-teal">
+            <h3 class="text-xl font-bold text-teal mb-3">Special Programs</h3>
+            <p class="text-gray-600 mb-2">Monthly</p>
+            <p>Revival nights, deliverance services, and annual conventions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Gallery -->
+    <section id="media-gallery" class="py-16 px-4 bg-muted">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-navy mb-8 text-center">
+          Our Gallery
+        </h2>
+        <div class="flex justify-center space-x-4 mb-8">
+          <button
+            class="gallery-filter px-4 py-2 rounded-full bg-teal text-white hover:bg-navy"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button
+            class="gallery-filter px-4 py-2 rounded-full bg-teal text-white hover:bg-navy"
+            data-filter="worship"
+          >
+            Worship
+          </button>
+          <button
+            class="gallery-filter px-4 py-2 rounded-full bg-teal text-white hover:bg-navy"
+            data-filter="events"
+          >
+            Events
+          </button>
+          <button
+            class="gallery-filter px-4 py-2 rounded-full bg-teal text-white hover:bg-navy"
+            data-filter="community"
+          >
+            Community
+          </button>
+        </div>
+        <div
+          class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gallery-container"
+        >
+          <!-- WORSHIP IMAGES -->
+          <div class="gallery-item" data-category="worship">
+            <img
+              src="/images/worship-1.jpg"
+              alt="Worship session"
+              class="gallery-img"
+            />
+          </div>
+          <div class="gallery-item" data-category="worship">
+            <img
+              src="/images/worship-2.jpg"
+              alt="Praise time"
+              class="gallery-img"
+            />
+          </div>
+
+          <!-- EVENTS IMAGES -->
+          <div class="gallery-item" data-category="events">
+            <img
+              src="/images/event-1.jpg"
+              alt="Revival event"
+              class="gallery-img"
+            />
+          </div>
+          <div class="gallery-item" data-category="events">
+            <img
+              src="/images/event-2.jpg"
+              alt="Youth day program"
+              class="gallery-img"
+            />
+          </div>
+
+          <!-- COMMUNITY IMAGES -->
+          <div class="gallery-item" data-category="community">
+            <img
+              src="/images/community-1.jpg"
+              alt="Charity outreach"
+              class="gallery-img"
+            />
+          </div>
+          <div class="gallery-item" data-category="community">
+            <img
+              src="/images/community-2.jpg"
+              alt="Community engagement"
+              class="gallery-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="bg-dark text-white py-20">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-teal mb-12">
+          What People Say
+        </h2>
+
+        <div class="relative">
+          <!-- Slides -->
+          <div class="testimonial-slide space-y-4">
+            <p class="text-xl italic">
+              "This cathedral is truly a home of divine wonders. A place where
+              worship comes alive."
+            </p>
+            <h4 class="text-lg font-semibold text-muted">
+              — Sister Mary A., Abeokuta
+            </h4>
+          </div>
+
+          <div class="testimonial-slide space-y-4 hidden">
+            <p class="text-xl italic">
+              "I found peace and joy worshipping here. The presence of God is
+              tangible."
+            </p>
+            <h4 class="text-lg font-semibold text-muted">
+              — Bro. James O., Lagos
+            </h4>
+          </div>
+
+          <div class="testimonial-slide space-y-4 hidden">
+            <p class="text-xl italic">
+              "The services are spirit-filled, and the choir is heavenly!"
+            </p>
+            <h4 class="text-lg font-semibold text-muted">
+              — Sis. Rebecca T., Ibadan
+            </h4>
+          </div>
+
+          <!-- Optional Dots -->
+          <div class="flex justify-center mt-6 space-x-3" id="testimonial-dots">
+            <button
+              class="w-3 h-3 rounded-full bg-muted opacity-70"
+              data-index="0"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-muted opacity-30"
+              data-index="1"
+            ></button>
+            <button
+              class="w-3 h-3 rounded-full bg-muted opacity-30"
+              data-index="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donations -->
+    <section id="donations" class="text-center py-12 px-4 bg-muted">
+      <h2 class="text-3xl font-bold text-navy mb-6">Support Our Mission</h2>
+      <p class="mb-6 max-w-2xl mx-auto">
+        Your generous donations help us spread the Gospel and provide support to
+        our community. Thank you for partnering with us!
+      </p>
+      <form class="grid gap-4 max-w-md mx-auto donation-form">
+        <div>
+          <label for="donor-name" class="block text-left">Full Name:</label>
+          <input
+            type="text"
+            id="donor-name"
+            class="w-full border rounded p-2"
+            required
+          />
+        </div>
+        <div>
+          <label for="donation-amount" class="block text-left"
+            >Donation Amount (₦):</label
+          >
+          <input
+            type="number"
+            id="donation-amount"
+            class="w-full border rounded p-2"
+            required
+          />
+        </div>
+        <div>
+          <label for="donation-purpose" class="block text-left">Purpose:</label>
+          <select
+            id="donation-purpose"
+            class="w-full border rounded p-2"
+            required
+          >
+            <option value="offering">Offering</option>
+            <option value="tithe">Tithe</option>
+            <option value="mission">Mission Work</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          class="bg-teal text-white px-4 py-2 rounded font-bold hover:bg-navy"
+        >
+          Donate Now
+        </button>
+      </form>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-dark text-white py-20 px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-teal mb-8 text-center">
+          Get in Touch
+        </h2>
+        <form
+          id="contactForm"
+          class="space-y-6 bg-teal p-8 rounded-xl shadow-1g"
+        >
+          <div>
+            <label for="name" class="block mb-2 text-sm font-bold"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full p-3 rounded-lg bg-dark text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-teal"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block mb-2 text-sm font-bold"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full p-3 rounded-lg bg-dark text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-teal"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block mb-2 text-sm font-bold"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full p-3 rounded-lg bg-dark text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-teal"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-navy text-white px-6 py-3 rounded-lg hover:bg-dark transition-colors w-full font-semibold"
+          >
+            Send Message
+          </button>
+        </form>
+
+        <p id="formStatus" class="mt-6 text-center text-green-400 hidden">
+          Message sent successfully!
+        </p>
+      </div>
+    </section>
+
+    <!-- Location Map -->
+    <section id="location" class="bg-[#fffef2] py-20 px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-[#252422] mb-4">Find Us</h2>
+        <p class="text-[#403d39] mb-8">
+          CCC Ibara Cathedral, Ibara Housing Estate, Abeokuta, Ogun State,
+          Nigeria
+        </p>
+        <div
+          class="w-full h-[400px] rounded-xl overflow-hidden shadow-lg border border-[#ccc5b9]"
+        >
+          <!-- MAP EMBED GOES HERE -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.8623799509246!2d3.3356763738131843!3d7.141908292862257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103a4c7596b22b89%3A0x5ddd0b2016177996!2sCelestial%20Church%20of%20Christ%2C%20Ibara%20Cathedral!5e0!3m2!1sen!2sng!4v1753883742321!5m2!1sen!2sng"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12 px-4">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-teal mb-4">CCC Ibara Cathedral</h3>
+          <p>No. 5 Cathedral Road, Abeokuta, Nigeria</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-teal mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-teal">Home</a></li>
+            <li><a href="#about" class="hover:text-teal">About Us</a></li>
+            <li>
+              <a href="#worship-services" class="hover:text-teal">Services</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-teal mb-4">Contact</h3>
+          <p>+234 801 234 5678</p>
+          <p>info@cccibara.org</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-teal mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-muted mt-8 pt-8 text-center">
+        <p>&copy; 2024 CCC Ibara Cathedral. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileNav = document.getElementById("mobile-nav");
+
+      menuToggle.addEventListener("click", () => {
+        mobileNav.classList.toggle("hidden");
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const galleryFilters = document.querySelectorAll(".gallery-filter");
+
+        galleryFilters.forEach((filter) => {
+          filter.addEventListener("click", () => {
+            const filterValue = filter.getAttribute("data-filter");
+            galleryItems.forEach((item) => {
+              if (
+                filterValue === "all" ||
+                item.getAttribute("data-category") === filterValue
+              ) {
+                item.classList.remove("hidden");
+              } else {
+                item.classList.add("hidden");
+              }
+            });
+          });
+        });
+      });
+    </script>
+
+    <!-- Lightbox with Navigation -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 transition-opacity duration-300 opacity-0"
+    >
+      <!-- Left Arrow -->
+      <button
+        id="lightbox-prev"
+        class="absolute left-4 text-white text-4xl font-bold z-10 hover:scale-110 transition"
+        aria-label="Previous image"
+      >
+        ‹
+      </button>
+
+      <!-- Image Container -->
+      <div class="relative max-w-3xl w-full">
+        <button
+          id="lightbox-close"
+          class="absolute top-2 right-2 text-white text-3xl font-bold z-10"
+        >
+          &times;
+        </button>
+        <img
+          id="lightbox-image"
+          src=""
+          alt="Expanded"
+          class="w-full h-auto rounded shadow-lg"
+        />
+      </div>
+
+      <!-- Right Arrow -->
+      <button
+        id="lightbox-next"
+        class="absolute right-4 text-white text-4xl font-bold z-10 hover:scale-110 transition"
+        aria-label="Next image"
+      >
+        ›
+      </button>
+    </div>
+
+    <!-- Lightbox functionality -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const images = Array.from(document.querySelectorAll(".gallery-img"));
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+        const lightboxClose = document.getElementById("lightbox-close");
+        const prevBtn = document.getElementById("lightbox-prev");
+        const nextBtn = document.getElementById("lightbox-next");
+
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+          currentIndex = index;
+          lightboxImage.src = images[currentIndex].src;
+          lightbox.classList.remove("hidden");
+          setTimeout(() => lightbox.classList.add("opacity-100"), 10);
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("opacity-100");
+          setTimeout(() => {
+            lightbox.classList.add("hidden");
+            lightboxImage.src = "";
+          }, 300);
+        }
+
+        function showPrevImage() {
+          currentIndex = (currentIndex - 1 + images.length) % images.length;
+          lightboxImage.src = images[currentIndex].src;
+        }
+
+        function showNextImage() {
+          currentIndex = (currentIndex + 1) % images.length;
+          lightboxImage.src = images[currentIndex].src;
+        }
+
+        images.forEach((img, index) => {
+          img.addEventListener("click", () => openLightbox(index));
+        });
+
+        lightboxClose.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+        prevBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          showPrevImage();
+        });
+        nextBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          showNextImage();
+        });
+
+        // Optional: allow keyboard arrows to navigate
+        document.addEventListener("keydown", (e) => {
+          if (!lightbox.classList.contains("hidden")) {
+            if (e.key === "ArrowLeft") showPrevImage();
+            if (e.key === "ArrowRight") showNextImage();
+            if (e.key === "Escape") closeLightbox();
+          }
+        });
+      });
+    </script>
+
+    <!-- scroll reveal effects -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const elements = document.querySelectorAll(".reveal");
+
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate-fadeInUp");
+                entry.target.classList.remove("opacity-0");
+                observer.unobserve(entry.target); // only animate once
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        elements.forEach((el) => {
+          el.classList.add("opacity-0");
+          observer.observe(el);
+        });
+      });
+    </script>
+
+    <!-- automated testimonial carousel -->
+    <script>
+      const slides = document.querySelectorAll(".testimonial-slide");
+      const dots = document.querySelectorAll("#testimonial-dots button");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.add("hidden");
+          dots[i].classList.remove("opacity-70");
+          dots[i].classList.add("opacity-30");
+        });
+        slides[index].classList.remove("hidden");
+        dots[index].classList.remove("opacity-30");
+        dots[index].classList.add("opacity-70");
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          showSlide(Number(dot.dataset.index));
+        });
+      });
+
+      // Initial display
+      showSlide(currentSlide);
+
+      // Auto-rotate every 5 seconds
+      setInterval(nextSlide, 5000);
+    </script>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 bg-teal text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-white hover:text-teal hover:scale-110 z-50"
+    >
+      ↑
+    </button>
+    <script>
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          backToTopBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+
+    <!-- contact form -->
+    <script>
+      const form = document.getElementById("contactForm");
+      const status = document.getElementById("formStatus");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Simulate sending message
+        status.classList.remove("hidden");
+        status.textContent = "Sending...";
+
+        setTimeout(() => {
+          status.textContent = "Message sent successfully!";
+          form.reset();
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
